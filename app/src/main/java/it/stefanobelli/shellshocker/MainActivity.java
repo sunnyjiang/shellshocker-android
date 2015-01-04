@@ -13,21 +13,40 @@ package it.stefanobelli.shellshocker;
  * src/it/stefanobelli/shellshocker/MainActivity.java
  *
  * ShellShocker4Android
+ *
+ * Status: WIP
+ * Version: x.y
+ *
+ * [AndroidManifest.xml for more info(s)]
  */
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.webkit.WebView;
+import android.view.View;
 
 
 public class MainActivity extends ActionBarActivity {
+
+    Bundle state;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
+
+    public void onGetString(View v){
+
+    }
+
+    public void onLaunchAttack(View v){
+
     }
 
 
@@ -47,11 +66,69 @@ public class MainActivity extends ActionBarActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_warningInfo) {
+            Intent warningAboutApp = new Intent(this, WarningActivity.class);
+            startActivity(warningAboutApp);
             return true;
         } else if (id == R.id.action_infoDev){
+            getDeveloperInfo(state);
+            return true;
+        } else if (id == R.id.action_infoAppStatus){
+            getApplicationInfo(state);
             return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
+
+    public Dialog getDeveloperInfo(Bundle bundle){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Developer Info");
+        builder.setMessage("Hi, my name is Stefano Belli, i am an Android developer from 2-3 months, so this is my first app. I know that is not too exiting... I also know: Python, C, C++, Java. Where you can find me? GMail: stefano9913@gmail.com");
+        builder.setPositiveButton("Open Source", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                openSource(state);
+            }
+        });
+        builder.setNeutralButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                //Do Nothing.
+            }
+        });
+        builder.show();
+        return builder.create();
+    }
+
+    public Dialog openSource(Bundle bundle){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Open Source Software");
+        builder.setMessage("This software is 'Copyleft', you can share it, redistribuide, do what you want.");
+        builder.setMessage("Open Source Hosted on: GitHub (https://github.com/StefanoBelli/shellshocker-android)");
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                //Do nothing
+            }
+        });
+
+        builder.show();
+        return builder.create();
+    }
+
+    public Dialog getApplicationInfo(Bundle bundle){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Application Info");
+        builder.setMessage("Status: WIP - Version x.y");
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+
+        builder.show();
+        return builder.create();
+    }
+
 }

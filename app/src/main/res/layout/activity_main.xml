@@ -55,14 +55,6 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <!-- ShowAllBeforeLaunch-->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:id="@+id/confirmShowMeSettings"
-        android:layout_below="@id/checkAll"/>
-
     <!-- Definitively Launch Attack -->
     <Button
         android:layout_width="100dp"
@@ -70,9 +62,9 @@
         android:text="@string/launchAttack"
         android:id="@+id/launch_btn_attack"
         android:onClick="onLaunchAttack"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_below="@+id/typeCommandEdit"
+        android:layout_alignRight="@+id/typeCommandEdit"
+        android:layout_alignEnd="@+id/typeCommandEdit" />
 
     <!--ProgressBar-->
     <ProgressBar
@@ -83,6 +75,8 @@
         android:layout_alignParentEnd="true"
         android:id="@+id/showProgress"
         style="?android:progressBarStyleHorizontal"
-        android:indeterminate="true"/>
+        android:indeterminate="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

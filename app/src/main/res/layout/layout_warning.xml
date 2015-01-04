@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--
+      - Stefano Belli
+      -
+      - Layout for Warning Activity (activity_warning.java)
+      - @id/action_warningAction
+      -
+      - res/layout/layout_warning.xml
+      -->
+
+    <TextView
+        android:layout_height="match_parent"
+        style="@style/WarningText"
+        android:text="This app let you exploit machines that looks vulnerable by ShellShock MAIN Bug (CVE-2014-6271).  Use this app as you think that it works better, but REMEMBER that developer is not responsable for illegal actions. Exploit system is illegal... You were advised :) Good TESTING"
+        android:layout_width="wrap_content" />
+
+</LinearLayout>

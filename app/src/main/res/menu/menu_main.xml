@@ -5,5 +5,7 @@
         app:showAsAction="never" />
     <item android:id="@+id/action_infoDev" android:title="@string/devInfo"
         app:showAsAction="always" />
+    <item android:id="@+id/action_infoAppStatus" android:title="@string/applicationStatus"
+        app:showAsAction="never"/>
 
 </menu>

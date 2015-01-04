@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/home/stefanozzz123/AndroidStudioProjects/Shellshocker/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="/home/stefanozzz123/AndroidStudioProjects/Shellshocker/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-c01a7628b9308674fc7221b86bbc01b10ea72219.jar" />
+    </item>
+    <item
+        jar="/home/stefanozzz123/AndroidStudioProjects/Shellshocker/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="/home/stefanozzz123/AndroidStudioProjects/Shellshocker/app/build/intermediates/pre-dexed/debug/classes-820132ebfee5f6bd4e48ac83753ed72f0db6b71b.jar" />
+    </item>
+    <item
+        jar="/home/stefanozzz123/AndroidStudioProjects/Shellshocker/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="/home/stefanozzz123/AndroidStudioProjects/Shellshocker/app/build/intermediates/pre-dexed/debug/classes-412eac7697131caa2227d4c6f42843c172e17ec2.jar" />
+    </item>
+    <item
+        jar="/home/stefanozzz123/Scaricati/android-studio/android-sdk-linux/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="/home/stefanozzz123/AndroidStudioProjects/Shellshocker/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-a16fb4712bf3fca98defa05e717582abe982dfe8.jar" />
+    </item>
+
+</items>

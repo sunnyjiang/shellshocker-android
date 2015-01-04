@@ -18,6 +18,7 @@
     <!--Menu values -->
     <string name="devInfo">About Developer</string>
     <string name="warning_exploiting_systems">Warning!</string>
+    <string name="applicationStatus">About App</string>
     <!--Get data str(s) -->
     <string name="type_target_">Type target here</string>
     <string name="type_target_hint">Target</string>
