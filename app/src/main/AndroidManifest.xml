@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="it.stefanobelli.shellshocker" >
+
+    <!--
+      - Stefano Belli,
+      - <stefanozzz123@localhost ~$>
+      -
+      - Manifest for package: it.stefanobelli.shellshocker
+      -
+      - Shellshock Exploit for Android
+      - Copyleft <(C), be free
+      -
+      - Email: <stefano9913@gmail.com>
+      - Google+: <http://plus.google.com/+StefanoBelli>
+      - Twitter: <@S73FYH4CK>
+      -
+      - See our great blog: <http://www.inthebit.it>
+      -
+      - ../main/AndroidManifest.xml
+      -
+      ->
+
+    <!- Here is Android Manifest XML file -->
+
+    <!-- Requires-->
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-sdk android:minSdkVersion="17"
+        android:targetSdkVersion="19"
+        android:maxSdkVersion="21" />
+
+    <!-- Application components -->
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Holo.Light.DarkActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

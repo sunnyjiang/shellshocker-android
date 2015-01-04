@@ -1,0 +1,88 @@
+<!--
+  - ShellShocker Android App
+  - Stefano Belli, <(C) Copyleft
+  - [ See more info in src/main/AndroidManifest.xml ]
+  -
+  - Activity Layout for MainActivity
+  -
+  - res/layout/activity_main.xml
+  -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+
+    <!-- Advertisement about application -->
+    <TextView android:text="@string/shell_shock_desc" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" style="@style/WarningText"
+        android:id="@+id/warning_for_shellshock"/>
+
+    <!-- Target -->
+    <TextView android:id="@+id/typeTargetText" android:layout_height="wrap_content"
+        android:layout_width="wrap_content" android:text="@string/type_target_"
+        android:layout_below="@id/warning_for_shellshock" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/typeTargetText"
+        android:hint="@string/type_target_hint"/>
+
+    <!-- Command -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/typeCommand"
+        android:text="@string/type_command_"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/typeCommandEdit"
+        android:layout_below="@id/typeCommand"
+        android:hint="@string/type_command_hint"/>
+
+    <!-- ConfirmAll -->
+    <Button android:id="@+id/checkAll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/confirm"
+        android:onClick="onGetString"
+        android:layout_below="@+id/typeCommandEdit"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <!-- ShowAllBeforeLaunch-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:id="@+id/confirmShowMeSettings"
+        android:layout_below="@id/checkAll"/>
+
+    <!-- Definitively Launch Attack -->
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="@string/launchAttack"
+        android:id="@+id/launch_btn_attack"
+        android:onClick="onLaunchAttack"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <!--ProgressBar-->
+    <ProgressBar
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/showProgress"
+        style="?android:progressBarStyleHorizontal"
+        android:indeterminate="true"/>
+
+</RelativeLayout>

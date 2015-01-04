@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+      -
+      - String resource file for
+      - Shellshocker Android App
+      -
+      - Stefano Belli (aka XSt3pDeveloperZ)
+      -
+      - res/values/strings.xml
+      -
+      -->
+
+    <!-- Used for define app name as name res -->
+    <string name="app_name">Shellshocker</string>
+    <!-- Welcome -->
+    <string name="shell_shock_desc">WARNING! This app exploits systems! See "Warning!" in menu!</string>
+    <!--Menu values -->
+    <string name="devInfo">About Developer</string>
+    <string name="warning_exploiting_systems">Warning!</string>
+    <!--Get data str(s) -->
+    <string name="type_target_">Type target here</string>
+    <string name="type_target_hint">Target</string>
+    <string name="type_command_">Type command to execute</string>
+    <string name="type_command_hint">Command</string>
+    <!-- Launch {!!}-->
+    <string name="confirm">Confirm</string>
+    <string name="launchAttack">Launch</string>
+
+</resources>
