@@ -1,5 +1,20 @@
 package it.stefanobelli.shellshocker;
 
+/**
+ * Stefano Belli
+ *
+ * GitHub: <https://github.com/StefanoBelli>
+ * EMail: <stefano9913@gmail.com>
+ * Google+: <http://plus.google.com/+StefanoBelli>
+ * WebSite: <http://www.inthebit.it>
+ *
+ * <(C) Copyleft, you can share this code modify and redistribuite.
+ *
+ * src/it/stefanobelli/shellshocker/MainActivity.java
+ *
+ * ShellShocker4Android
+ */
+
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
