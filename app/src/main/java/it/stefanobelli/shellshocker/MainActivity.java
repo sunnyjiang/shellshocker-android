@@ -29,24 +29,45 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.WebViewClient;
+import android.widget.Button;
+import android.widget.EditText;
+import android.webkit.WebView;
+import android.webkit.WebSettings;
+import android.widget.TextView;
 
 
 public class MainActivity extends ActionBarActivity {
 
     Bundle state;
+    EditText getTarget;
+    EditText getTargetCommand;
+    TextView showConfirm;
+    Button confirm;
+    Button launch;
+    WebView webBr;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //Define widgets
+        getTarget = (EditText)findViewById(R.id.typeTargetEText);
+        getTargetCommand = (EditText)findViewById(R.id.typeCommandEdit);
+        confirm = (Button)findViewById(R.id.checkAll);
+        launch = (Button)findViewById(R.id.launch_btn_attack);
+        webBr = (WebView)findViewById(R.id.browser);
+        //Browser, to finish
+        WebSettings settingsBrowser = webBr.getSettings();
+        webBr.setWebViewClient(new WebViewClient());
     }
 
     public void onGetString(View v){
-
+        /**Get from edittext and convert to String */
     }
 
     public void onLaunchAttack(View v){
-
+        /**Launch attack*/
     }
 
 
