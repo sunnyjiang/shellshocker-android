@@ -59,6 +59,24 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:layout_below="@+id/checkAll"
+        android:layout_alignRight="@+id/launch_btn_attack"
+        android:layout_alignEnd="@+id/launch_btn_attack"
+        android:id="@+id/showtarget" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:layout_below="@+id/showtarget"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/showcommand"/>
+
 
 
     <!-- Definitively Launch Attack -->
@@ -77,7 +95,7 @@
         android:layout_width="match_parent"
         android:layout_height="10dp"
         android:id="@+id/browser"
-        android:layout_below="@+id/progressBar"
+        android:layout_below="@+id/showProgress"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
@@ -90,7 +108,7 @@
         android:layout_alignParentEnd="true"
         android:id="@+id/showProgress"
         style="?android:progressBarStyleHorizontal"
-        android:indeterminate="true"
+        android:indeterminate="false"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 

