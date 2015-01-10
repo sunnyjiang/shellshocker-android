@@ -7,3 +7,4 @@ Stefano Belli,
 
 Google+: <http://plus.google.com/+StefanoBelli>
 WebSite: <http://www.inthebit.it>
+Next update ready, i will upload nextly.
