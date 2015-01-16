@@ -95,21 +95,8 @@
         android:layout_width="match_parent"
         android:layout_height="10dp"
         android:id="@+id/browser"
-        android:layout_below="@+id/showProgress"
+        android:layout_below="@id/showcommand"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
-
-    <!--ProgressBar-->
-    <ProgressBar
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:id="@+id/showProgress"
-        style="?android:progressBarStyleHorizontal"
-        android:indeterminate="false"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
 
 </RelativeLayout>
