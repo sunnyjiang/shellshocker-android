@@ -19,9 +19,11 @@
       -
       - ../main/AndroidManifest.xml
       -
-      - Status: WIP
-      - Version: x.y
+      - Status: ALPHA
+      - Version: 0.2rev1
       -
+      - Development 'suspended' for now. If you want tell me if app works
+      - however Italian translation will be completed
       ->
 
     <!- Here is Android Manifest XML file -->
